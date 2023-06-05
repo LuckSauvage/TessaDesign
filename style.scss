@@ -1,4 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 $background-color : #0b162C;
+$primary-color : #1c2942;
+$secondary-color : #3b556d;
+$other-color : #5fc2ba;
+$text-color : #ffffff;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
 .header {
     background-color: $background-color;
+    color: $text-color;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+        p {
+            margin: 0;
+            padding-right: 24.4%;
+        }
+        .square {
+            border: 3px solid;
+            padding: 100px;
+            font-size: 1.4em;
+                h3 {
+                    letter-spacing: 12px;
+
+                }
+        }
 }
