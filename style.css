@@ -16,11 +16,38 @@ body {
     align-self: flex-start;
     margin: 0; }
   .header .content .square {
-    border: 3px solid;
+    border: 4px solid;
     padding: 5em;
     font-size: 1.4em; }
     .header .content .square h3 {
-      letter-spacing: 12px;
+      letter-spacing: 11px;
       color: #5fc2ba; }
+  .header .animated-mouse {
+    padding-top: 5%; }
+    .header .animated-mouse .mouse {
+      width: 60px;
+      height: 100px;
+      border: 4px solid #ffffff;
+      border-radius: 60px;
+      position: relative; }
+      .header .animated-mouse .mouse .scroll-mouse {
+        position: absolute;
+        width: .8em;
+        height: .8em;
+        background-color: #ffffff;
+        left: 50%;
+        top: 15%;
+        border-radius: 50%;
+        transform: translate(-50%, 0);
+        animation: mouse 2s ease-in-out infinite; }
+@keyframes mouse {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0; }
+  20%, 70% {
+    opacity: 1; }
+  90%, 100% {
+    transform: translate(-50%, 400%);
+    opacity: 0; } }
 
 /*# sourceMappingURL=style.css.map */
