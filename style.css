@@ -4,6 +4,59 @@ body {
   padding: 0;
   font-family: 'Poppins', sans-serif; }
 
+@keyframes spinner {
+  0% {
+    transform: rotate(45deg) rotateX(-25deg) rotateY(25deg); }
+  50% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(25deg); }
+  100% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(385deg); } }
+.spinner.hidden {
+  display: none; }
+
+.header.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; }
+
+.header {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; }
+
+.spinner {
+  width: 70.4px;
+  height: 70.4px;
+  animation: spinner 1.6s infinite ease;
+  transform-style: preserve-3d;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0b162C; }
+  .spinner > div {
+    background-color: #0b162C;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    border: 3.5px solid #ffffff; }
+  .spinner div:nth-of-type(1) {
+    transform: translateZ(-35.2px) rotateY(180deg); }
+  .spinner div:nth-of-type(2) {
+    transform: rotateY(-270deg) translateX(50%);
+    transform-origin: top right; }
+  .spinner div:nth-of-type(3) {
+    transform: rotateY(270deg) translateX(-50%);
+    transform-origin: center left; }
+  .spinner div:nth-of-type(4) {
+    transform: rotateX(90deg) translateY(-50%);
+    transform-origin: top center; }
+  .spinner div:nth-of-type(5) {
+    transform: rotateX(-90deg) translateY(50%);
+    transform-origin: bottom center; }
+  .spinner div:nth-of-type(6) {
+    transform: translateZ(35.2px); }
+
 .header {
   background-color: #0b162C;
   color: #ffffff;
@@ -12,6 +65,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  .header .content a {
+    text-decoration: none;
+    color: inherit; }
   .header .content .p_left {
     align-self: flex-start;
     margin: 0; }
@@ -21,7 +77,11 @@ body {
     font-size: 1.4em; }
     .header .content .square h3 {
       letter-spacing: 11px;
-      color: #5fc2ba; }
+      color: #5fc2ba;
+      transition: color .3s ease-in-out, border-bottom .3s ease-in-out; }
+    .header .content .square h3:hover {
+      border: inset 237px 0 0 0 #ffffff;
+      color: #ffffff; }
   .header .animated-mouse {
     padding-top: 5%; }
     .header .animated-mouse .mouse {
