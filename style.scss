@@ -19,17 +19,20 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-        p {
-            margin: 0;
-            padding-right: 24.4%;
-        }
-        .square {
-            border: 3px solid;
-            padding: 100px;
-            font-size: 1.4em;
+        .content {
+            .p_left {
+                align-self: flex-start;
+                margin: 0;
+            }
+            .square {
+                border: 3px solid;
+                padding: 5em;
+                font-size: 1.4em;
                 h3 {
                     letter-spacing: 12px;
-
+                    color: #5fc2ba;
                 }
+            }
         }
+        
 }

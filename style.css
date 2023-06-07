@@ -12,14 +12,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-  .header p {
-    margin: 0;
-    padding-right: 24.4%; }
-  .header .square {
+  .header .content .p_left {
+    align-self: flex-start;
+    margin: 0; }
+  .header .content .square {
     border: 3px solid;
-    padding: 100px;
+    padding: 5em;
     font-size: 1.4em; }
-    .header .square h3 {
-      letter-spacing: 12px; }
+    .header .content .square h3 {
+      letter-spacing: 12px;
+      color: #5fc2ba; }
 
 /*# sourceMappingURL=style.css.map */
