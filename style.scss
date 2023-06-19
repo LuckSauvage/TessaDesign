@@ -1,22 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-$background-color : black;
-$primary-color : #1c2942;
-$secondary-color : #3b556d;
-$other-color : #5fc2ba;
+$background-color :#101116;
+$primary-color : #2F3148;
+$secondary-color : #3F5576;
+$other-color : #587099;
 $text-color : #ffffff;
 
+@font-face {
+    font-family:"Sporting" ;
+    src: url("/font/SportingGrotesque-Bold.otf") format(opentype);
+}
 body {
     margin: 0;
     padding: 0;
+    font-family: "Sporting", sans-serif;
     .header {
-        background: linear-gradient(93deg, #f0cea8, #f78664, #d1bfff);
+        background: linear-gradient(93deg, $background-color, $other-color);
         background-size: 600% 600%;
         -webkit-animation: AnimationName 46s ease infinite;
         -moz-animation: AnimationName 46s ease infinite;
         -o-animation: AnimationName 46s ease infinite;
         animation: AnimationName 46s ease infinite;
         width: 100%;
-        height: 100vh;
+        height:100vh;
+        position: absolute;
 
   @-webkit-keyframes AnimationName {
     0% {
@@ -67,14 +73,13 @@ body {
   }
 
  .burger-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 2%;
+    position: absolute;
+    right: 0;
     .menu {
         background-color: transparent;
         border: none;
         cursor: pointer;
-        align-self: flex-end;
         z-index: 9999;
     }
     .line {
@@ -95,7 +100,7 @@ body {
         stroke-dasharray: 60 207;
         stroke-width: 6;
     }
-    .opened {
+    &.opened {
         .line1 {
             stroke-dasharray: 90 207;
             stroke-dashoffset: -134;
@@ -111,37 +116,134 @@ body {
             stroke-dashoffset: -134;
             stroke-width: 6;
         }
+        ~ .menu-container {
+          display: none;
+        }
     }
-    .menu-container {
+     .menu-container {
         display: none;
-    }
-    
-    .menu.opened + .menu-container {
-       display: block;
-       height: 100%;
-       width: 250px;
-       position: fixed;
-       z-index: 0;
-       top: 0;
-       right: 0px;
-       background-color: #e8e8e8 ;
-       padding-top: 60px;
-  transition: left 0.5s ease;
-     
-        .menu-list {
+         &.active {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          width: 300px;
+          position: fixed;
+          z-index: 0;
+          top: 0;
+          right: 0px;
+          transition: right 0.5s ease;
+
+          .menu-list {
             list-style: none;
+            font-size: 25px;
+            color: white;
+            padding-right: 4em;
+
             li {
-                padding: 3%;
-                a {
-                    color: inherit;
-                    text-decoration: none;
-                }
-               }
+              transition: transform 0.5s ease;
+
+              a {
+                color: inherit;
+                text-decoration: none;
+              }
+            }
+
+            li:hover {
+              transform: translateX(30px);
             }
           }
+        }
+    }
  }
+ .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    .title-list {
+      justify-content: center;
+      color: $text-color;
+    }
+    li {
+        margin: 0;
+        font-size: 2em;
+        list-style: none;
+    }
+    .decalage {
+        padding-left: 3em;
+    }
    }
+
+   .mouse {
+    width: 50px;
+    height: 90px;
+    border: 4px solid $text-color;
+    border-radius: 30px;
+    position: relative;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+   }
+   .mouse::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 20px;
+    background: $text-color;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    animation: mouse 2s infinite ;
+   }
+   @keyframes mouse {
+    from {
+      opacity: 0;
+      top: 10px;
+    }
+    top {
+      opacity: 0;
+      top: 50px;
+    }
+   }
+   
+    
+   }
+   @media only screen and (max-width: 320px) {
+    
+  }
+   @media only screen and (max-width: 480px) {
+    .header{
+      .title {
+        padding-right: 20px;
+        li {
+          font-size: 1.3em;
+        }
+      }
+      .burger-menu.opened {
+        ~ .title {
+          display: none;
+        }
+      }
+      .mouse {
+        border: none;
+      }
+    }
+ 
+  }
+  
+  @media only screen  and (max-width: 768px) {
+
+  }
+  
+  @media only screen and (min-width: 769px) {
+  
+  }
  }
+
 
 
 
