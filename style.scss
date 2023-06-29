@@ -21,7 +21,7 @@ body {
         -o-animation: AnimationName 46s ease infinite;
         animation: AnimationName 46s ease infinite;
         width: 100%;
-        height:100vh;
+        height:100%;
         position: absolute;
 
   @-webkit-keyframes AnimationName {
@@ -209,15 +209,74 @@ body {
       top: 50px;
     }
    }
-   
-    
-   }
+  }
+
+   .projects {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    .main-text {
+      h2 {
+        display: flex;
+        justify-content: center;
+        font-size: 2em;
+      }
+    }
+    .sample-slider {
+      width: 100%;
+      position: absolute;
+      img {
+        width: 100%;
+        height: 30em;
+      }
+      .swiper-slide {
+        &:not(.swiper-slide-active) {
+          img {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+    .swiper-pagination {
+      position: relative;
+      bottom: 100%;
+    }
+    .project-button {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      z-index: 1;
+    }
+    .view-project-button {
+      display: inline-block;
+      padding: 20px 30px;
+      background-color: #fff;
+      color: #333;
+      text-decoration: none;
+      border: 1px solid #333;
+      border-radius: 40px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .swiper-slide {
+      &:hover {
+        .view-project-button {
+          color: #000000;
+        }
+      }
+    }
+}
+      
+  }
+
+
+
    @media only screen and (max-width: 480px) {
     .header{
       .title {
         padding-right: 20px;
         li {
-          font-size: 1em;
+          font-size: 2em;
         }
       }
    
@@ -236,7 +295,8 @@ body {
         }
         .menu-container.active {
           .menu-list{
-            font-size: 20px;
+            font-size: 40px;
+           text-align: center;
           }
         }
       }
@@ -277,10 +337,21 @@ body {
       }
     }
 
+    .mouse {
+      width: 70px;
+      height: 120px;
+      border-radius: 40px;
+
+     }
+     .mouse::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+     }
+
    }
   }
-  
- }
+
 
 
 
